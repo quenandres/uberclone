@@ -13,17 +13,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipPath(
-              clipper: DiagonalPathClipperTwo(),
-              child: _logo(),
-            ),            
-            _users()
-          ]
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.green, Colors.blue] //Añade los colores del gradiente.
+            )
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipPath(
+                clipper: DiagonalPathClipperTwo(),
+                child: _logo(),
+              ),            
+              _users()
+            ]
+          ),
         ),
       )
     );
